@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"$id": "QSProjectSchema",
+	"type": "object",
+	"properties": {
+		"path": {
+			"type": "string",
+      "x-prompt": "What is the relative path where you want to create the project?"
+		},
+    "name": {
+			"type": "string",
+      "x-prompt": "What is the name of your project?"
+		}
+	},
+	"required": [
+		"name",
+    "path"
+	]
+}

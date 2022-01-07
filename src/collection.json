@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "qs-project": {
+      "aliases": [ "p", "project" ],
+      "description": "Creates a quickstart project shell",
+      "factory": "./qs-project/index#qsProject",
+      "schema": "./qs-project/schema.json"
+    }
+  }
+}
