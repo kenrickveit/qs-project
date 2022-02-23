@@ -5,12 +5,36 @@
 	"properties": {
 		"path": {
 			"type": "string",
-      "x-prompt": "What is the relative path where you want to create the project?"
+      "x-prompt": "What is the relative path where you want to create the project?",
+      "default": "."
 		},
     "name": {
 			"type": "string",
-      "x-prompt": "What is the name of your project?"
-		}
+      "x-prompt": "What is the name of your project?",
+      "default": "kenrickveit"
+		},
+	"style": {
+  "description": "The file extension or preprocessor to use for style files.",
+  "type": "string",
+  "default": "css",
+  "enum": [
+    "css",
+    "scss",
+    "sass",
+    "less"
+  ],
+  "x-prompt": {
+    "message": "Which stylesheet format would you like to use?",
+    "type": "list",
+    "items": [
+      { "value": "css",  "label": "CSS" },
+      { "value": "scss", "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]" },
+      { "value": "sass", "label": "Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]" },
+      { "value": "less", "label": "Less   [ http://lesscss.org/                                            ]" }
+    ]
+  },
+},
+	
 	},
 	"required": [
 		"name",

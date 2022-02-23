@@ -15,7 +15,6 @@ import {
 import {
   basename,
   normalize,
-  dirname,
 } from 'path';
 
 
@@ -25,7 +24,7 @@ import {
 export function qsProject(_options: any): Rule {
   return (tree, context) => {
     _options.name = basename(_options.name);
-    _options.path = normalize(dirname((_options.path + '/' + _options.name)));
+    _options.path_ext = normalize((_options.path + '/' + _options.name));
 
     const templateSource = apply(
       url('./files'),
@@ -34,7 +33,7 @@ export function qsProject(_options: any): Rule {
           ..._options,
           ...strings,
         }),
-        move(_options.path),
+        move(_options.path_ext),
       ],
     );
     return chain([mergeWith(templateSource)])(tree, context);
